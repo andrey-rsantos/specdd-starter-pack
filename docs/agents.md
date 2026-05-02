@@ -11,7 +11,7 @@
 - Sempre: evitar abstrações e “melhorias” não pedidas.
 
 ## Restrições
-- Não criar features novas fora do escopo do PRD/spec.
+- Não criar features novas fora do escopo do PRD/spec sem aviso — se o pedido estiver fora do escopo, sinalize e pergunte se o usuário quer expandir antes de continuar.
 - Não trocar stack/bibliotecas-chave.
 - Não criar/alterar schema sem atualizar docs/spec.md (e migrations).
 - Não refatorar em massa sem pedido explícito.
@@ -24,6 +24,7 @@
 
 ## Rotina de docs (sem burocracia)
 - Atualize `docs/NOW.md` ao iniciar/trocar de tarefa (1 task por vez).
+- Se `docs/NOW.md` estiver vazio ou desatualizado, interprete o pedido do usuário, preencha o NOW (objetivo + critérios de pronto) e confirme antes de implementar.
 - Atualize `docs/implementation_summary.md` somente ao fechar um milestone (mover para Done com data + 1 linha).
 - Se uma mudança alterar regra/contrato/limite técnico, atualize `docs/spec.md` no mesmo PR.
 - Se uma mudança alterar decisão arquitetural (ADR, stack, contratos entre serviços), atualize `docs/architecture.md` no mesmo PR.

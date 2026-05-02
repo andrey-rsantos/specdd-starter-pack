@@ -197,11 +197,18 @@ Sempre que começar/trocar de tarefa.
 
 ### (A) Implementar a task atual
 ```text
-Leia docs/agents.md, docs/spec.md, docs/architecture.md e docs/NOW.md (e PRD se precisar).
+Leia docs/agents.md, docs/spec.md, docs/architecture.md, docs/NOW.md e docs/PRD_v1.md.
+
+Antes de implementar, avalie o pedido:
+- Se docs/NOW.md estiver vazio ou desatualizado: interprete o pedido, preencha o NOW (objetivo + critérios de pronto) e confirme antes de continuar.
+- Se o pedido conflitar com docs/spec.md: avise o conflito e pergunte se o usuário quer atualizar a spec antes de continuar.
+- Se o pedido estiver fora do escopo do PRD: avise, pergunte se o usuário quer expandir o escopo — se sim, crie docs/PRD_v2.md, atualize docs/spec.md e docs/NOW.md antes de implementar.
+
+Depois de validado:
 Implemente APENAS o que está em docs/NOW.md.
 Faça mudanças pequenas e reversíveis (KISS).
-Se precisar mudar regra/contrato/schema, proponha patch em docs/spec.md.
-Se precisar mudar decisão arquitetural, proponha patch em docs/architecture.md.
+Se precisar mudar regra/contrato/schema, atualize docs/spec.md no mesmo PR.
+Se precisar mudar decisão arquitetural, atualize docs/architecture.md no mesmo PR.
 Não invente features.
 ```
 
