@@ -1,5 +1,9 @@
 # SpecDD Starter Pack
 
+<p align="center">
+  <img src="SpecDD_Starter_Pack.png" alt="SpecDD mascot" width="160" />
+</p>
+
 Este é um conjunto mínimo de documentos para desenvolvimento assistido por IA sem perder o controle do projeto. Criei ele com foco em desenvolvimento de SaaS, MicroSaaS e sistemas web de pequeno porte, que é basicamente com o que trabalho nos dias de hoje.
 
 Inspirado em metodologias como o GitHub Spec Kit (https://github.com/github/spec-kit) e AI Coders Context (https://github.com/vinilana/dotcontext), mas extremamente simplificado, montei este Starter Pack pensado para quem precisa de velocidade, mas sem perder o controle do que a IA está fazendo, seja você um desenvolvedor experiente ou alguém que está começando a codar com IA.
@@ -42,6 +46,18 @@ Este starter pack resolve isso: documentação mínima o suficiente para manter 
 2. Rode o **Bootstrap B** do `STARTER_PACK_GUIDE.md` — a IA lê sua codebase e preenche todos os docs.
 
 > Guia completo você encontra no arquivo `STARTER_PACK_GUIDE.md`.
+
+---
+
+## Para não-técnicos
+
+Use os prompts de Bootstrap para gerar os docs automaticamente.
+Depois é só pedir o que você quer ao seu agente de IA — ele preenche o
+`docs/NOW.md`, valida contra as regras do projeto e implementa.
+
+Uma dica: de vez em quando pergunte ao agente o que ele está fazendo e
+peça que cite de onde tirou aquela decisão (os arquivos em `/docs`).
+Isso te mantém no controle sem precisar ler código.
 
 ---
 
