@@ -1,33 +1,27 @@
-# Claude Code — Project Instructions (SpecDD / KISS)
+# CLAUDE.md — Wrapper para Claude Code (SpecDD)
 
-## Prime directive
-Follow the project’s source-of-truth documents in the priority order below.  
-If there is any conflict, obey the highest-priority document.
+Este é um wrapper curto. As regras de trabalho oficiais estão em **`docs/agents.md`** — leia-o primeiro e siga-o.
 
-## Source of truth (priority)
-1) `docs/spec.md` — contracts, rules, restrictions, limits  
-2) `docs/agents.md` — working mode (KISS), process  
-3) `docs/NOW.md` — current task (only one at a time)  
-4) `docs/PRD_vX.md` — scope and intent  
-5) `docs/implementation_summary.md` — milestones / history
+## Fonte de verdade (ordem de prioridade)
+Siga a ordem definida em `docs/agents.md`:
+`docs/spec.md` → `docs/agents.md` → `docs/NOW.md` → `docs/architecture.md` → `docs/PRD_vX.md` → `docs/implementation_summary.md`.
+Em conflito, `docs/spec.md` vence.
 
-## Operating mode (default)
-- Always start by reading `docs/NOW.md` and confirm the objective + constraints from `docs/spec.md`.
-- Keep solutions minimal (KISS). Prefer the simplest thing that satisfies the spec.
-- When unsure, ask at most 1–3 short clarification questions; otherwise, make reasonable assumptions and proceed.
+## Papel (não é fixo)
+Claude atua conforme o modo pedido pelo usuário:
+- **Planner** — plano técnico a partir de NOW/spec.
+- **Executor** — implementa apenas o escopo da task atual (KISS).
+- **Reviewer** — revisa o diff contra spec, architecture, NOW e DoD.
+- **Orchestrator (Pipeline)** — encadeia os subagents de `.claude/agents/` (`planner` → `implementer` → `reviewer`).
 
-## Output policy (important)
-- DO NOT write product implementation code (components, services, endpoints, migrations, etc.).
-- You MAY write: document templates, checklists, plans, high-level pseudocode, folder structure, contracts, acceptance criteria, and prompts to use in a coding tool.
+Se o usuário não disser o modo, pergunte ou assuma **Planner** e confirme.
 
-## Workflow (SpecDD)
-1) Restate the task goal + constraints (from `docs/NOW.md` and `docs/spec.md`).
-2) Produce: plan + DoD/acceptance criteria + edge cases + risks.
-3) Produce two prompts:
-   - “Plan Mode” (analysis/plan for the coding tool)
-   - “Build/Agent Mode” (instructions to execute)
-4) If needed, propose a small textual patch to `docs/spec.md` (never silently change requirements).
+## Específico do Claude Code
+- Subagents nativos ficam em `.claude/agents/` (auto-descobertos via Task tool), com as instruções do papel embutidas. As regras de trabalho compartilhadas estão em `docs/agents.md`.
+- Pode usar os prompts de `.agents/manual-prompts/` quando o usuário preferir o fluxo manual.
 
-## Guardrails
-- No scope creep beyond PRD/spec/NOW. If something is missing, flag it explicitly.
-- Prefer smaller milestones and incremental validation.
+## Lembretes
+- KISS e uma task por vez (detalhes em `docs/agents.md`).
+- Não invente features fora de PRD/spec/NOW — sinalize.
+- Se mudar regra/contrato/schema → atualize `docs/spec.md` no mesmo PR.
+- Se mudar decisão arquitetural → atualize `docs/architecture.md` no mesmo PR.
