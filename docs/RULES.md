@@ -22,7 +22,7 @@ Antes de agir, leia nesta ordem. Se não conseguir ler algum, PARE e sinalize.
 - Depois: implemente em mudanças pequenas e reversíveis.
 - Uma task por vez (a de `docs/NOW.md`).
 
-## Restrições (anti-"IA viajou")
+## Restrições
 - Não criar features fora do escopo de SPEC/NOW.
 - Não trocar stack/componentes-chave sem pedido explícito.
 - Não criar/alterar schema/contrato sem atualizar `docs/SPEC.md` (e gerar migration, se o projeto usar).

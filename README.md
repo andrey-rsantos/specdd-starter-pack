@@ -27,7 +27,7 @@ Quatro documentos em `docs/`, mais roteadores curtos por ferramenta.
 | `docs/ARCH.md` | Decisões arquiteturais, ADRs, contratos entre partes. |
 | `docs/NOW.md` | Task atual (uma por vez) + seção "Feito" (marcos recentes; histórico completo no git). |
 | `CLAUDE.md` / `AGENTS.md` | Roteadores curtos que apontam para `docs/RULES.md`. Não duplicam regra. |
-| `.claude/agents/` · `.codex/agents/` · `.opencode/agents/` | Subagents nativos por ferramenta (`planner` → `implementer` → `reviewer`). |
+| `.claude/agents/` · `.codex/agents/` · `.opencode/agents/` | Definições de subagentes por ferramenta (`planner` → `implementer` → `reviewer`). |
 
 ---
 
@@ -75,6 +75,8 @@ Mesma mecânica, invertendo papéis: qualquer modelo forte planeja/revisa, qualq
 Se sua ferramenta suporta subagents, rode o ciclo inteiro sem trocar de janela:
 `planner` → `implementer` → `reviewer` (em `.claude/agents/`, `.codex/agents/`, `.opencode/agents/`).
 O `planner` lê os docs e escreve a task no `docs/NOW.md`; o `implementer` implementa só o NOW; o `reviewer` revisa o diff. Todos seguem `docs/RULES.md`.
+
+No Codex, peça explicitamente para usar os subagentes e indique os papéis desejados; sem esse pedido, o trabalho continua na thread atual.
 
 > **Nota do autor:** uso Claude (Opus/Sonnet) para planejar e revisar, e LLMs mais baratos (Codex/MiniMax) para executar. Reduz custo sem perder qualidade nas decisões críticas — mas é opcional.
 
