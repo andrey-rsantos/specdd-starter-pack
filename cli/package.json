@@ -1,0 +1,42 @@
+{
+  "name": "specdd-starter-pack",
+  "version": "0.1.1",
+  "description": "Scaffold do SpecDD Starter Pack — governança mínima de spec-driven development para qualquer agente de código (Claude, Codex, OpenCode).",
+  "type": "module",
+  "bin": {
+    "specdd-starter-pack": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "specdd",
+    "spec-driven-development",
+    "scaffold",
+    "starter",
+    "claude",
+    "codex",
+    "opencode",
+    "ai-agents"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prepack": "node scripts/sync-readme.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-rsantos/specdd-starter-pack.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/andrey-rsantos/specdd-starter-pack#readme",
+  "bugs": {
+    "url": "https://github.com/andrey-rsantos/specdd-starter-pack/issues"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0"
+  }
+}

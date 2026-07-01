@@ -1,7 +1,7 @@
 # SpecDD Starter Pack
 
 <p align="center">
-  <img src="SpecDD_Starter_Pack.png" alt="SpecDD mascot" width="160" />
+  <img src="https://raw.githubusercontent.com/andrey-rsantos/specdd-starter-pack/master/SpecDD_Starter_Pack.png" alt="SpecDD mascot" width="160" />
 </p>
 
 Um conjunto mínimo de documentos para **desenvolvimento orientado a especificação (Spec Driven Development)** com IA, sem perder o controle do projeto. Um canivete suíço: serve para qualquer tipo de sistema — web, SaaS, CLI, biblioteca, pipeline de dados, o que for — e foi pensado para os principais agentes de código: **Claude, Codex e OpenCode**.
