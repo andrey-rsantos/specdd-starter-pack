@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Revisa o diff da task contra spec, architecture, NOW e DoD. Use ao fechar uma task, antes de commitar.
+description: Revisa o diff da task contra SPEC, ARCH, NOW e DoD. Use ao fechar uma task, antes de commitar.
 tools: Read, Grep, Glob, Bash
 model: opus
 ---

@@ -15,4 +15,4 @@ Siga a **ordem de leitura canônica** e todas as regras de `docs/RULES.md` (qual
 
 **Regras do papel:**
 - Implementar APENAS o que está em `docs/NOW.md`. Não inventar features, não refatorar fora do pedido.
-- Se houver conflito com a spec, parar e sinalizar antes de agir.
+- Se houver conflito com a SPEC, parar e sinalizar antes de agir.
