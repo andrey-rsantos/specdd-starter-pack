@@ -1,15 +1,15 @@
-# architecture.md — <NOME DO SISTEMA>
+# ARCH.md — <NOME DO SISTEMA>
 
 ## 0) Regras do documento
 - Documentar apenas decisões tomadas, não hipóteses.
 - Se algo não estiver aqui, não é uma decisão arquitetural registrada.
 - Mudanças de arquitetura exigem atualização deste doc + sinalização no PR.
-- Para conflitos com `docs/spec.md`, spec.md vence.
+- Para conflitos com `docs/SPEC.md`, SPEC.md vence.
 
-## 1) Visão geral do sistema (1 parágrafo)
+## 1) Visão geral do sistema
 <Descreva em alto nível o que o sistema faz e como suas partes se conectam.>
 
-## 2) Diagrama de componentes (opcional)
+## 2) Diagrama de componentes
 ```
 <Diagrama ASCII ou link para imagem/Excalidraw/Mermaid>
 
@@ -22,13 +22,17 @@ graph TD
 ```
 
 ## 3) Stack e responsabilidades
-| Camada       | Tecnologia      | Responsabilidade                  |
-|--------------|-----------------|-----------------------------------|
-| Frontend     | <...>           | <...>                             |
-| API/Backend  | <...>           | <...>                             |
-| Banco        | <...>           | <...>                             |
-| Auth         | <...>           | <...>                             |
-| Infra/Deploy | <...>           | <...>                             |
+> Ajuste as camadas ao tipo de projeto. Exemplos:
+> - Web/SaaS: Frontend / API-Backend / Banco / Auth / Infra-Deploy
+> - CLI: Comandos / Núcleo / Persistência
+> - Biblioteca: API pública / Core / Adapters
+> - Pipeline de dados: Ingestão / Transformação / Sink
+
+| Camada          | Tecnologia      | Responsabilidade                  |
+|-----------------|-----------------|-----------------------------------|
+| <camada 1>      | <...>           | <...>                             |
+| <camada 2>      | <...>           | <...>                             |
+| <camada 3>      | <...>           | <...>                             |
 
 ## 4) Decisões arquiteturais (ADRs resumidos)
 ### ADR-001: <Título da decisão>
@@ -45,14 +49,14 @@ graph TD
 - <Serviço A> → <Serviço B>: <protocolo, formato, garantias>
 - <ex: API → Worker via fila SQS, payload JSON, entrega at-least-once>
 
-## 6) Fluxo de dados crítico
-<Descreva o caminho dos dados nas operações mais sensíveis: autenticação, pagamento, etc.>
+## 6) Fluxo de dados crítico (se aplicável)
+<Descreva o caminho dos dados nas operações mais sensíveis. Ex.: autenticação, pagamento, processamento de arquivo, chamada externa.>
 
 1. ...
 2. ...
 3. ...
 
-## 7) Segurança arquitetural
+## 7) Segurança arquitetural (se aplicável)
 - Onde está o boundary de autenticação: <...>
 - Dados sensíveis em repouso: <criptografado? onde?>
 - Dados sensíveis em trânsito: <TLS? onde termina?>
@@ -60,10 +64,10 @@ graph TD
 
 ## 8) Escalabilidade e limites conhecidos
 - Gargalo atual: <...>
-- Limite aceito no MVP: <ex: "suporta até X usuários simultâneos">
+- Limite aceito no escopo/versão atual: <ex: "suporta até X usuários simultâneos">
 - O que quebra primeiro se escalar: <...>
 
 ## 9) O que NÃO está aqui (fora de escopo arquitetural)
-- <ex: "sem cache distribuído no MVP">
+- <ex: "sem cache distribuído no escopo atual">
 - <ex: "sem multi-region">
 - <ex: "sem event sourcing">
