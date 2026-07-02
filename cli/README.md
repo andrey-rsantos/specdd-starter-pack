@@ -14,6 +14,10 @@ Na raiz do seu repositório, rode:
 npx specdd-starter-pack
 ```
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andrey-rsantos/specdd-starter-pack/master/how-to-install.gif" alt="Demonstração da instalação via npx" width="700" />
+</p>
+
 [![npm](https://img.shields.io/npm/v/specdd-starter-pack.svg)](https://www.npmjs.com/package/specdd-starter-pack)
 
 
