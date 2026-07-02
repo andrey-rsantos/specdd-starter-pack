@@ -21,6 +21,15 @@
 - Dependências-chave (fixas): <...>
 - Observações: <ex: "sem trocar stack sem decisão">
 
+## 2.1) Convenções de código (opcional)
+> O pack é neutro em estilo. Preencha só se este projeto quiser impor defaults.
+> Vazio = sem regra de estilo obrigatória.
+- Princípios: <ex: KISS, YAGNI, DRY; e quando NÃO aplicar>
+- Nomenclatura: <ex: camelCase para variável, PascalCase para tipo>
+- Formatação / lint: <ferramenta + config, ex: Prettier + ESLint>
+- Padrões a evitar: <ex: sem abstração prematura, sem herança profunda>
+- Testes: <ex: nomear como deve_fazer_X; padrão AAA>
+
 ## 3) Glossário rápido (opcional)
 - <termo>: <definição curta>
 
