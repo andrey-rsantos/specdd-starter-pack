@@ -22,6 +22,26 @@ Antes de agir, leia nesta ordem. Se não conseguir ler algum, PARE e sinalize.
 - Depois: implemente em mudanças pequenas e reversíveis.
 - Uma task por vez (a de `docs/NOW.md`).
 
+## Padrão de commits
+O título de todos os commits deve seguir este formato:
+- :emoji: tipo(escopo): descrição curta em português
+
+O que foi feito:
+- Resumo objetivo das alterações.
+
+Como foi feito:
+- Abordagem técnica utilizada.
+
+Validação:
+- Testes ou verificações executadas.
+
+Regras:
+- Escrever todos os commits em português do Brasil.
+- O título e o corpo devem refletir exatamente o conteúdo do commit.
+- Não declarar testes ou verificações que não foram executados.
+- Usar tipos como `feat`, `fix`, `docs`, `test`, `refactor`, `style`, `build` e `chore`.
+- Criar commits pequenos, coerentes e relacionados ao que foi feito.
+
 ## Restrições
 - Não criar features fora do escopo de SPEC/NOW.
 - Não trocar stack/componentes-chave sem pedido explícito.
