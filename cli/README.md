@@ -94,12 +94,22 @@ Sem subagents, sem trocar de ferramenta: o mesmo agente planeja e executa na mes
 Tudo em uma janela. O rigor vem dos docs, não da separação de ferramentas.
 
 ### 2. Claude planeja → Codex executa
-Bom para misturar modelos do Claude da OpenAI na criação de planos/tarefas e na execução dos mesmos.
+Bom para misturar modelos da Anthropic e da OpenAI na criação de planos/tarefas e na execução dos mesmos. Há duas formas de fazer isso:
 
+**Opção A — Build prompt (copiar e colar):**
 1. No Claude, peça o plano (ele lê `docs/` e escreve a próxima task em `docs/NOW.md`):
    > Leia `docs/RULES.md`, `docs/SPEC.md`, `docs/ARCH.md` e `docs/NOW.md`. Planeje a próxima entrega em passos pequenos e escreva apenas a primeira task em `docs/NOW.md`. Depois, gere um **build prompt** pronto para colar em outra ferramenta, pedindo para implementar só o que está em `docs/NOW.md`.
 2. Cole o build prompt no Codex para implementar.
 3. Volte ao Claude para revisar o diff contra SPEC/ARCH/NOW.
+
+**Opção B — Plugin oficial do Codex no Claude Code (sem copiar e colar):**
+1. Instale o plugin oficial do Codex no Claude Code (requer o Codex CLI instalado e autenticado):
+   ```
+   /plugin install codex@codex-plugins
+   ```
+2. Peça o plano normalmente no Claude e, na hora de executar, delegue direto:
+   > Use o Codex para implementar apenas a task de `docs/NOW.md`, seguindo `docs/RULES.md`.
+3. O Codex roda dentro da mesma sessão e o Claude revisa o resultado na sequência — tudo em uma janela, sem troca manual de prompts.
 
 ### 3. Vice-versa (ou qualquer par)
 Mesma mecânica, invertendo papéis: qualquer modelo (de preferência um forte) planeja/revisa, qualquer modelo executa.
@@ -109,7 +119,7 @@ Tanto Claude, quanto Codex e OpenCode suportam subagents, portanto:
 `planner` → `implementer` → `reviewer` (em `.claude/agents/`, `.codex/agents/`, `.opencode/agents/`).
 O `planner` lê os docs e escreve a task no `docs/NOW.md`; o `implementer` implementa só o NOW; o `reviewer` revisa o diff. Todos seguem `docs/RULES.md`.
 
-> **Nota do autor:** Eu costumo usar Claude Opus 4.8 para planejar e revisar, e Claude Sonnet na execução. Também gosto muito de utilizar o Codex 5.4 ou 5.5 tanto no planejamento quanto na execução. 
+> **Nota do autor:** Eu costumo usar Claude Opus 5 para planejar e revisar, e delego o desenvolvimento para o GPT 5.6 Luna com effort **high**, pelo plugin oficial do Codex no Claude Code. Assim tenho os dois na mesma sessão: o Claude planeja/revisa e o Codex executa, sem copiar e colar build prompts entre janelas.
 
 ---
 
