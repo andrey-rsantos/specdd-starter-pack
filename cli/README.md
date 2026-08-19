@@ -33,14 +33,16 @@ A ideia central: programar de forma agêntica: **planejar, implementar e revisar
 
 ## O que está incluído
 
-Quatro documentos em `docs/`, mais roteadores curtos por ferramenta.
+Quatro documentos em `docs/`, duas pastas de apoio e roteadores curtos por ferramenta.
 
 | Arquivo / Pasta | Para quê |
 |---|---|
 | `docs/RULES.md` | **Como a IA deve trabalhar**: processo/governança. Fonte oficial das regras. Neutro a stack. |
 | `docs/SPEC.md` | Fonte de verdade: **produto** (visão/escopo/fora-de-escopo) + **contrato técnico** (regras, restrições, anti-alucinação). |
 | `docs/ARCH.md` | Decisões arquiteturais, ADRs, contratos entre partes. |
-| `docs/NOW.md` | Task atual (uma por vez) + seção "Feito" (marcos recentes; histórico completo no git). |
+| `docs/NOW.md` | Task atual (uma por vez) + **Backlog** (fila ordenada do que vem depois) + seção "Feito" (marcos recentes; histórico completo no git). |
+| `docs/knowledge/` | Conhecimento durável: guias internos, FAQs, integrações, problemas conhecidos e decisões operacionais. Consulta sob demanda, com índice próprio. |
+| `docs/plans/` | Planos e rascunhos que ainda não viraram task. Não é fonte de verdade e não autoriza execução. |
 | `CLAUDE.md` / `AGENTS.md` | Roteadores curtos que apontam para `docs/RULES.md`. Não duplicam regra. |
 | `.claude/agents/` · `.codex/agents/` · `.opencode/agents/` | Definições de subagentes por ferramenta (`planner` → `implementer` → `reviewer`). |
 
@@ -52,10 +54,11 @@ Quatro documentos em `docs/`, mais roteadores curtos por ferramenta.
 
 A fonte oficial das regras é **`docs/RULES.md`**. `CLAUDE.md` e `AGENTS.md` são só roteadores, não duplicam regra.
 
-**Ordem de leitura canônica:** `docs/RULES.md` → `docs/SPEC.md` → `docs/ARCH.md` → `docs/NOW.md`. Em conflito, `docs/SPEC.md` vence.
+**Ordem de leitura canônica:** `docs/RULES.md` → `docs/SPEC.md` → `docs/ARCH.md` → `docs/NOW.md`. Em conflito, `docs/SPEC.md` vence. `docs/knowledge/` e `docs/plans/` ficam **fora** da leitura obrigatória: são consulta sob demanda, para não inflar contexto em toda task.
 
 Princípios:
 - **Disciplina de processo é lei** por aqui: plano pequeno → partes reversíveis → uma task por vez → SPEC vence → atualizar doc no mesmo PR.
+- **A IA nunca adivinha o próximo passo**: o **Backlog** do `docs/NOW.md` é a fila. Ao fechar uma task, o topo do backlog vira a próxima. Backlog vazio = a IA para e pergunta.
 - **Estilo de código é neutro**: o pack não impõe qualquer regra de estilo. Se o seu projeto quiser defaults de estilo e princípios como KISS, YAGNI ou DRY, escreva-os na SPEC (seção **Convenções de código**).
 - **`docs/` é a ponte**: qualquer modelo lê de lá. Por isso você pode misturar ferramentas livremente.
 
