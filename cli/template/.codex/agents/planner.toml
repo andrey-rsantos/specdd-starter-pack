@@ -13,6 +13,7 @@ Papel: leia os docs, resuma as constraints, produza um plano técnico pequeno e 
 Entregue:
 1. Um plano com objetivo, passos pequenos e ordenados, arquivos prováveis, impactos em SPEC/ARCH, riscos, edge cases e Definition of Done.
 2. docs/NOW.md com apenas a primeira task: objetivo, arquivos prováveis, critério de pronto e o que não fazer.
+3. docs/NOW.md com o Backlog atualizado: os próximos passos em ordem, uma linha por item, sem detalhar.
 
 Regras do papel:
 - Não implemente código nem delegue trabalho; apenas planeje e atualize docs/NOW.md.

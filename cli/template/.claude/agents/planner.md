@@ -20,6 +20,7 @@ Siga a **ordem de leitura canônica** e todas as regras de `docs/RULES.md` (rest
    - riscos e edge cases
    - Definition of Done
 2. `docs/NOW.md` preenchido com **apenas a primeira task** (objetivo + arquivos prováveis + critério de pronto + o que não fazer).
+3. `docs/NOW.md` com o **Backlog** atualizado: os passos seguintes em ordem, 1 linha por item. Não deixe o backlog vazio enquanto houver trabalho previsto.
 
 **Regras do papel:**
 - Uma task por vez no NOW. Não implementar — só planejar e preparar o NOW.

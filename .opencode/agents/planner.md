@@ -22,6 +22,7 @@ Você é o subagent **planner** do fluxo SpecDD. Regras gerais de trabalho: `doc
    - riscos e edge cases
    - Definition of Done
 2. `docs/NOW.md` preenchido com **apenas a primeira task** (objetivo + arquivos prováveis + critério de pronto + o que não fazer).
+3. `docs/NOW.md` com o **Backlog** atualizado: os passos seguintes em ordem, 1 linha por item. Não deixe o backlog vazio enquanto houver trabalho previsto.
 
 **Regras:**
 - Menor caminho que atende a spec. Uma task por vez no NOW.
