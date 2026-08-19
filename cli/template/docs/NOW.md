@@ -13,5 +13,12 @@
 - Critério de pronto:
 - Notas rápidas:
 
+## Backlog (ordenado — o topo é a próxima candidata)
+> Fila do que vem depois. 1 linha por item, sem detalhar: o detalhe nasce quando o
+> item é promovido a "Próxima task". Backlog vazio = pare e pergunte ao usuário.
+- [ ] <item 1>
+- [ ] <item 2>
+- [ ] <item 3>
+
 ## Não mexer / armadilhas
 - <...>

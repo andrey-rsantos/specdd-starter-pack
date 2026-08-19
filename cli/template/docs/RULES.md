@@ -7,7 +7,11 @@ Antes de agir, leia nesta ordem. Se não conseguir ler algum, PARE e sinalize.
 1. `docs/RULES.md` (este doc — como trabalhar)
 2. `docs/SPEC.md` (fonte de verdade: produto + contrato técnico)
 3. `docs/ARCH.md` (decisões arquiteturais)
-4. `docs/NOW.md` (task atual + o que já foi feito)
+4. `docs/NOW.md` (task atual + backlog + o que já foi feito)
+
+Consulta sob demanda (NÃO entram na leitura obrigatória — abra só quando a task pedir):
+- `docs/knowledge/` — conhecimento durável do projeto. Comece pelo índice `docs/knowledge/README.md`.
+- `docs/plans/` — planos e rascunhos. Não são fonte de verdade nem autorização de trabalho.
 
 ## Prioridade em conflito
 `docs/SPEC.md` vence. Em conflito com qualquer outro doc, siga a SPEC e sinalize a divergência.
@@ -21,6 +25,27 @@ Antes de agir, leia nesta ordem. Se não conseguir ler algum, PARE e sinalize.
 - Primeiro: proponha um plano curto (passos pequenos) quando a mudança for relevante.
 - Depois: implemente em mudanças pequenas e reversíveis.
 - Uma task por vez (a de `docs/NOW.md`).
+
+## Backlog e próxima task
+- `docs/NOW.md` tem duas listas: **Próxima task** (apenas 1, detalhada) e **Backlog** (fila ordenada, 1 linha por item).
+- Ao concluir a task: mova para "Feito", promova o topo do Backlog para "Próxima task" e detalhe (objetivo, arquivos prováveis, critério de pronto).
+- Item de backlog NÃO é autorização de trabalho. Só a "Próxima task" é executável.
+- Ideia nova que aparecer no meio da task → registre no Backlog em vez de implementar na hora.
+- Backlog vazio → PARE e peça o próximo item ao usuário. Não invente task.
+- Ordem do backlog é decisão do usuário. Sugira repriorizar, não repriorize sozinho.
+
+## Base de conhecimento (`docs/knowledge/`)
+- Guarda conhecimento durável do projeto: documentações e guias internos, FAQs, integrações externas, problemas conhecidos + workaround, decisões operacionais e aprendizados de debugging.
+- Consulte antes de investigar do zero algo que tem cara de recorrente ou já resolvido.
+- Registre lá o que for reutilizável no futuro; o que for efêmero fica no PR/commit.
+- Fronteira: regra de negócio/contrato → `docs/SPEC.md`. Decisão arquitetural/ADR → `docs/ARCH.md`. `knowledge/` é o resto (o "como funciona na prática" e o "já passamos por isso").
+- Um arquivo por assunto, nome em kebab-case. Atualize o índice `docs/knowledge/README.md` no mesmo PR.
+
+## Planos e rascunhos (`docs/plans/`)
+- Para planos de entregas maiores, investigações e rascunhos que ainda não viraram task.
+- Não é fonte de verdade e não autoriza execução: trabalho só acontece via `docs/NOW.md`.
+- Plano aprovado → quebre em itens do Backlog do NOW, referenciando o arquivo do plano.
+- Nome: `NNN-slug.md`. Marque o status no topo do arquivo (rascunho / aprovado / concluído / descartado).
 
 ## Padrão de commits
 O título de todos os commits deve seguir este formato:
@@ -64,6 +89,7 @@ Uma task só está pronta quando:
 - Sem scope creep nem refactor não pedido.
 
 ## Rotina de docs
-- Atualize `docs/NOW.md` ao **iniciar** e ao **concluir** a task. NOW reflete o estado real — nunca lista task já concluída como "atual". Mova o que fechou para a seção "Feito".
+- Atualize `docs/NOW.md` ao **iniciar** e ao **concluir** a task. NOW reflete o estado real — nunca lista task já concluída como "atual". Mova o que fechou para a seção "Feito" e promova o próximo item do Backlog.
 - Se a mudança alterar regra/contrato/limite técnico → atualize `docs/SPEC.md` no mesmo PR.
 - Se a mudança alterar decisão arquitetural (ADR, stack, contratos entre serviços) → atualize `docs/ARCH.md` no mesmo PR.
+- Se a task gerou conhecimento reutilizável (armadilha, integração, procedimento) → registre em `docs/knowledge/` e atualize o índice no mesmo PR.
