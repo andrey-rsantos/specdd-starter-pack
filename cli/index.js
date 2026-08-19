@@ -63,14 +63,20 @@ AGUARDE as respostas antes de continuar:
 - O que está FORA de escopo (o que NÃO fazer)?
 - Métrica de sucesso (apenas 1)?
 - Stack/linguagem já decidida? Se não, sugira uma e peça confirmação.
+- Quais entregas você já enxerga depois da primeira, em ordem? (vira o backlog)
 
 Passo 2 — Só depois das respostas, preencha nesta ordem:
 1) docs/SPEC.md (produto, stack, entidades, fluxos, regras de negócio, regras
    de dados, permissões, proibições, critérios de aceite).
 2) docs/ARCH.md (componentes e responsabilidades, diagrama, ADRs resumidos,
    contratos entre partes).
-3) docs/NOW.md com a primeira task (apenas 1) + critério de pronto.
+3) docs/NOW.md com a primeira task (apenas 1) + critério de pronto E o Backlog
+   com as entregas seguintes, em ordem, 1 linha por item. O Backlog nunca fica
+   vazio: é ele que diz qual é o próximo passo sem ninguém ter que adivinhar.
 4) Ajuste docs/RULES.md só se necessário.
+5) Mantenha docs/knowledge/ e docs/plans/ como estão (índices vazios). Use
+   docs/knowledge/ quando surgir conhecimento durável e docs/plans/ para
+   rascunhos que ainda não viraram task — as regras estão em docs/RULES.md.
 
 Regras: se algo ficou ambíguo, pergunte antes de assumir. Não invente features
 fora do que o usuário descreveu. Sem arquitetura extra.${footer}`;
@@ -88,8 +94,12 @@ Tarefa: preencher os docs do SpecDD com base no que já existe.
    regras de negócio, regras de dados, permissões, proibições, critérios "done").
 2) docs/ARCH.md: componentes e responsabilidades reais, diagrama, ADRs
    identificados, contratos entre partes.
-3) docs/NOW.md: preencher a seção "Feito" com o estado atual e a próxima task.
+3) docs/NOW.md: "Feito" com o estado atual, a próxima task (apenas 1) e o
+   Backlog com os próximos passos que o código já evidencia (TODOs, lacunas,
+   dívidas óbvias), em ordem e 1 linha por item. Confirme a ordem com o usuário.
 4) Ajustar docs/RULES.md só se necessário.
+5) Se a leitura do código revelar conhecimento durável (armadilhas, integrações,
+   procedimentos), registre em docs/knowledge/ e atualize o índice de lá.
 
 Saída: conteúdo completo de cada arquivo.
 Regras: não inventar o que não existe no código. Não propor refatorações.${footer}`;
